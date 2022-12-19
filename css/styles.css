@@ -1,0 +1,22 @@
+nav,
+footer {
+    background-color:#BDD9F2 ;
+}
+
+span {
+    grid-column: 2;
+    align-self: center;
+    color: #404040;
+}
+
+h1 {
+    font-size: larger;
+}
+
+h2 {
+    font-size: larger;
+}
+
+h3 {
+    font-size: medium;
+}
