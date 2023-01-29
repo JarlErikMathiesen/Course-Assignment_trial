@@ -6,45 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>Document</title>
+    <title>Rainy Days</title>
 </head>
 <body>
     <header>
         <nav>
             <a href="index.html">
-                <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo" width="200" length="250">
+                <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">
             </a>
+            <input type="text" placeholder="..Search">
             <a href="checkout_page.html">   
-                <span class="material-symbols-outlined">
-                shopping_cart
-                </span>
+                <img src="images/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" class="shopping_cart">
             </a>
         </nav>
     </header>
-        <img src="/images/fil-mazzarino-unsplash.jpg" alt="woman running through a forest, ground covered in redbrown leaves" class="hero">
-    <section>
-        <a href="list_of_jackets_women.html">
-            <img src="images/womenjackets.jpg" alt="picture of a woman" class="index_jackets">
-            <p>
-                women's jackets
-            </p>
-        </a>    
-    </section> 
-    <section>
-       <a href="list_of_jackets_men.html">
-        <span class="mens_jackets">
-        <img src="images/mensjackets.jpg" alt="picture of a man" class="index_jackets">
-        <p>
-            men's jackets
-        </p>
-        </span>
-       </a>
-    </section>
-    <section>
-        <p>
+    <img src="/images/fil-mazzarino-unsplash-CROPPED.jpg" alt="woman running through a forest, ground covered in redbrown leaves" class="hero">
+    <div class="gender_jackets_box">
+        <section class="gender_jackets">
+            <a href="list_of_jackets_women.html">
+                <img src="images/womenjackets.jpg" alt="picture of a woman" class="gender_picture">
+                <p>
+                    women's jackets
+                </p>
+            </a>    
+        </section> 
+        <section class="gender_jackets">
+            <a href="list_of_jackets_men.html">
+                <img src="images/mensjackets.jpg" alt="picture of a man" class="gender_picture">
+                <p>
+                    men's jackets
+                </p>
+            </a>
+        </section>
+    </div>
+    <p>
             get ready for the rain season with our new arrivals
-        </p>
+    </p>
+    <section>
+       <div class="index_jackets_box">
+        
         <img src="/images/RainyDays_Jacket2.png" alt="grey jacket" class="index_jackets">
         <p>
         899,-
@@ -57,9 +57,10 @@
         <p>
         999,- 
         </p>
+    </div>
     </section>
     <footer>
-        <img src="/images/RainyDays_Logo.png" alt="logo of rainy days">
+        <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">
         <p>
         returns  
         </p>

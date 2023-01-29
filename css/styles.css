@@ -1,16 +1,20 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 nav,
 footer {
     background-color:#BDD9F2 ;
 }
 
-button,
-form,
-h1,
-h2,
-h3,
-h4,
-p,
-section {
+a {
+    text-decoration:none ;
+}
+
+body {
     font-family: "montserrat", sans-serif;
 }
 
@@ -30,15 +34,58 @@ h4 {
     font-size: 20px;
 }
 
-
 span {
     grid-column: 40;
     align-self: center;
     color: #404040;
 }
 
+.about_bodytext {
+    max-width: 600px;
+}
+
+.about_heading {
+font-size: 30px;
+}
+
+.about_image_a{
+    max-height: 65em;
+    max-width: 65em;
+    border-radius: 1.5%;
+}
+
+.about_image_b{
+    max-width: 65em;
+    border-radius: 20px;
+}
+
+
 .bodytext {
     font-size: 11px;
+}
+
+.container {
+    border: 2px solid #f00;
+}
+
+.checkout_page_jacket {
+    max-width: 30em;
+}
+
+.gender_jackets {
+    background-color: #BDD9F2;
+    margin: 5px;
+    border-radius: 10px;
+    float: left;
+    font-size: 35px;
+}
+
+.gender_jackets_box {
+    display: flex;
+}
+
+.gender_picture {
+    border-radius: 10px 10px 0px 0px;
 }
 
 .headings {
@@ -51,11 +98,58 @@ span {
 }
 
 .index_jackets {
-    width: 40%;
+    width: 10%;
 }
 
-.mens_jackets {
-    background-color: #BDD9F2;
+.index_jackets_box {
+    display: flex;
+}
+
+.jacket_page_main {
+    width: 40em;
+}
+
+.jacket_page_list {
+    width: 20em;
+}
+
+.jacket_page_box {
+    display: flex;
+    border:rgb(169, 27, 27) solid 10px;
+    justify-content:space-evenly;
+
+}
+
+.jacket_page_card {
+    border:#010958 solid 10px;
+}
+
+.list_of_jackets_box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.list_of_jackets_card {
+    border: rgb(133, 29, 29) solid 10px;
+    border-radius: 5px;
+}
+
+.list_of_jackets_img {
+    max-width: 20em;
+    border: #3c46a6 solid 10px;
+    border-radius: 5px;
+    float: left;
+}
+
+.logo {
+    max-width: 12em;
+}
+
+.material_symbols_outlined {
+    min-width: 30px;
 }
 
 .ordsuc1 {
@@ -64,6 +158,11 @@ span {
 
 .ordsuc2 {
     font-size: 15px;
+}
+
+.shopping_cart {
+    min-width: 75px;
+    max-width: 100px;
 }
 
 #rectangle {
