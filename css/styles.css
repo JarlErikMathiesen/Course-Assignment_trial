@@ -1,9 +1,5 @@
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+
 
 nav,
 footer {
@@ -40,6 +36,47 @@ span {
     color: #404040;
 }
 
+.container {
+    border: 2px solid #f00;
+}
+
+.logo {
+    max-width: 12em;
+}
+
+.material_symbols_outlined {
+    min-width: 30px;
+}
+
+.shopping_cart {
+    min-width: 75px;
+    max-width: 100px;
+}
+
+/*Home Page*/
+
+.gender_jackets {
+    background-color: #BDD9F2;
+    margin: 5px;
+    border-radius: 10px;
+    float: left;
+    font-size: 35px;
+}
+
+.gender_jackets_box {
+    display: flex;
+}
+
+.gender_picture {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.hero {
+    width: 100%;
+}
+
+/* About Page*/
+
 .about_bodytext {
     max-width: 600px;
 }
@@ -59,42 +96,19 @@ font-size: 30px;
     border-radius: 20px;
 }
 
-
 .bodytext {
     font-size: 11px;
 }
 
-.container {
-    border: 2px solid #f00;
-}
+/*Checkout Page*/
 
 .checkout_page_jacket {
     max-width: 30em;
 }
 
-.gender_jackets {
-    background-color: #BDD9F2;
-    margin: 5px;
-    border-radius: 10px;
-    float: left;
-    font-size: 35px;
-}
-
-.gender_jackets_box {
-    display: flex;
-}
-
-.gender_picture {
-    border-radius: 10px 10px 0px 0px;
-}
-
 .headings {
     font-size: 11px;
     font-weight: bolder;
-}
-
-.hero {
-    width: 100%;
 }
 
 .index_jackets {
@@ -105,8 +119,53 @@ font-size: 30px;
     display: flex;
 }
 
+/*Jacket Page*/
+
+.jacket_headline {
+    display: grid;
+}
+
+.jacket_list {
+    display: grid;
+    padding-left: 13px;
+    align-content: center;
+    font-size: 26px;
+    margin-top: -40px;
+}
+
+.jacket_price {
+    display: grid;
+    font-size: 61px;
+    font-weight: 700;
+    align-content: end;
+}
+
 .jacket_page_main {
-    width: 40em;
+    display: grid;
+    grid-template-columns: 10% 40% 25% 15% 10%;
+    grid-template-rows: 10em 20em 20em;
+}
+
+.jacket_page_main img {
+    width: 25em;
+    margin-top: 53px;
+}
+
+.jacket_page_main h1 {
+    text-transform: capitalize;
+    font-size: 65px;
+    grid-column: 3/6;
+}
+
+.jacket_page_main ul {
+    grid-column: 3;
+    grid-row: 2;
+    padding-left: 30px;
+}
+
+.jacket_page_main p {
+    grid-column: 3;
+    grid-row: 2;
 }
 
 .jacket_page_list {
@@ -115,13 +174,98 @@ font-size: 30px;
 
 .jacket_page_box {
     display: flex;
-    border:rgb(169, 27, 27) solid 10px;
     justify-content:space-evenly;
+}
+
+.jacket_page_buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 44px;
+}
+
+.jacket_page_addbasket {
+    display: grid;
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.jacket_page_addbasket button {
+
+    background-color: #0087FF;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    max-width: 206px;
+    max-height: 71px;
+    min-height: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+    border: solid white;
+    align-self: center;
+    margin-top: -60px;
+}
+
+.jacket_page_addnr {
+    grid-column: 5;
+    display: flex;
+    flex-direction: column;
+    min-width: 20px;
+    max-width: 40px;
+    justify-content: center;
+    margin-top: -60px;
+}
+
+.jacket_page_addnr button {
+    background: #BDD9F2;
+    margin: 10px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 5px;
+    border: #BDD9F2;
 
 }
 
+.jacket_page_buttons button {
+    margin: 20px;
+    border: #BDD9F2 solid 3px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    background-color: white;
+    max-width: 50px;
+    min-width: 50px;
+    min-height: 50px;
+}
+
 .jacket_page_card {
-    border:#010958 solid 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.jacket_page_card h2 {
+    text-transform: capitalize;
+    font-size: 30px;
+    max-width: 8em;
+}
+
+.jacket_page_card p {
+    font-size: 45px;
+    font-weight: 700;
+
+}
+
+/*List of Jackets Page*/
+
+.cardhead {
+    grid-column: 2/-2;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.cardlink {
+    grid-row: 1/4;
 }
 
 .list_of_jackets_box {
@@ -132,25 +276,38 @@ font-size: 30px;
     justify-items: center;
 }
 
+.list_of_jackets_box h1 {
+    grid-column: -1/1;
+    text-transform: capitalize;
+    font-size: 50px;
+
+}
+
 .list_of_jackets_card {
-    border: rgb(133, 29, 29) solid 10px;
-    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+}
+
+.list_of_jackets_card ul {
+    margin: -17px -26px;
+    font-size: 20px;
+}
+
+.list_of_jackets_card p {
+    margin-top: 212px;
+    font-size: 35px;
+    font-weight: 700;
+    
 }
 
 .list_of_jackets_img {
     max-width: 20em;
-    border: #3c46a6 solid 10px;
-    border-radius: 5px;
-    float: left;
+    grid-row: 1/4 ;
 }
 
-.logo {
-    max-width: 12em;
-}
 
-.material_symbols_outlined {
-    min-width: 30px;
-}
+/*Order Success Page*/
 
 .ordsuc1 {
     font-size: 20px;
@@ -158,11 +315,6 @@ font-size: 30px;
 
 .ordsuc2 {
     font-size: 15px;
-}
-
-.shopping_cart {
-    min-width: 75px;
-    max-width: 100px;
 }
 
 #rectangle {
