@@ -1,119 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <title>Rainy Days</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/cadf1bec62.js" crossorigin="anonymous"></script>
+        <title>Rainy Days</title>
+    </head>
 <body>
     <header>
+        <a href="index.html">
+            <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">
+        </a>
+        <input type="checkbox" id="menu-checkbox"/>
+        <label for="menu-checkbox" class="hamburger-icon"><i class="fa-solid fa-bars"></i></label>
         <nav>
-            <a href="index.html">
-                <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">
-            </a>
-            <input type="text" placeholder="..Search">
-            <a href="checkout_page.html">   
-                <img src="images/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" class="shopping_cart">
-            </a>
+            <ul>
+                <li><a href="jacket_page_men.html">Men</a></li>
+                <li><a href="jacket_page_women.html">Women</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
-    </header>
-    <section>
-        <p>
-        s
-        </p>
-        <p>
-        m
-        </p>
-        <p>
-        l
-        </p>
-        <p>
-        xl
-        </p>
-        <p>
-        xxl
-        </p>
-    </section>
-    <section>
-        <img src="/images/RainyDays_Jacket3.png" alt="alpha runner jacket for women" class="jacket_page_main">
-    </section>
-    <section>
-        <h1>
-        women's alpha runner
-        </h1>
-        <ul>
-            <li>
-                made for outdoor sports
-            </li>
-            <li>
-                super light
-            </li>
-            <li>
-                high breathability    
-            </li>
-        </ul>
-        <p>
-        999,-
-        </p>
-    </section>
-    <section>
-        <button type="button">
-            add to basket
-        </button>
-        <button type="button">
-            +
-        </button>
-        <button type="button">
-            1
-        </button>
-        <button type="button">
-            -
-        </button>
+        <div class="nav_right">
+        <input type="text" placeholder="..Search">
+        <a href="checkout_page.html">   
+            <img src="images/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" class="shopping_cart">
+        </a>
+        </div>
+</header>
+    <main>
+        <div class="jacket_page_main">
+            <div class="jacket_page_buttons">
+                <button type="button">s</button>
+                <button type="button">m</button>
+                <button type="button">l</button>
+                <button type="button">xl</button>
+                <button type="button">xxl</button>
+            </div>
+            <img src="/images/RainyDays_Jacket3.png" alt="alpha runner jacket for women">
+            <h1 class="jacket_headline">
+            women's alpha runner
+            </h1>
+            <ul class="jacket_list">
+                <li>
+                    made for outdoor sports
+                </li>
+                <li>
+                    super light
+                </li>
+                <li>
+                    high breathability    
+                </li>
+            </ul>
+            <p class="jacket_price">
+            999,-
+            </p>
+            <div class="jacket_page_addbasket">
+            <button type="button">
+                Add to basket
+            </button>
+            </div>
+            <div class="jacket_page_addnr">
+            <button type="button">
+                +
+            </button>
+            <button type="button">
+                1
+            </button>
+            <button type="button">
+                -
+            </button>
+            </div>
+        </div>
         <h2>
-        you may also like
+            you may also like
         </h2>
-    </section>
-<section class="jacket_page_box">
-    <section>
-    <h2>
-        women's hard shell jacket
-        </h2>
-        <img src="/images/RainyDays_Jacket1.png" alt="hard shell jacket for women" class="jacket_page_list">
-        <p>
-        1299,-
-        </p>
-    </section>
-    <section>
-        <h2>
-        women's casual jacket
-        </h2>
-        <img src="/images/RainyDays_Jacket5.png" alt="casual jacket for women" class="jacket_page_list">
-        <p>
-        999,-
-        </p>
-    </section>
-    <section>
-        <h2>
-        women's stormbreaker
-        </h2>
-        <img src="/images/RainyDays_Jacket6.png" alt="stormbreaker jacket for women" class="jacket_page_list">
-        <p>
-        1199,-
-        </p>
-    </section>
-    <section>
-        <h2>
-        women's sailor wing
-        </h2>
-        <img src="/images/RainyDays_Jacket4.png" alt="sailor wing jacket for women" class="jacket_page_list">
-        <p>
-        999,-
-        </p>
-    </section>
-</section>
+        <section class="jacket_page_box">
+            <section class="jacket_page_card">
+                <img src="/images/RainyDays_Jacket1.png" alt="hard shell jacket for women" class="jacket_page_list">
+                <h2>
+                    women's hard shell jacket
+                </h2>
+                <p>
+                1299,-
+                </p>
+            </section>
+            <section class="jacket_page_card">
+                <img src="/images/RainyDays_Jacket5.png" alt="casual jacket for women" class="jacket_page_list">
+                <h2>
+                    women's casual jacket
+                </h2>
+                <p>
+                999,-
+                </p>
+            </section>
+            <section class="jacket_page_card">
+                <img src="/images/RainyDays_Jacket6.png" alt="stormbreaker jacket for women" class="jacket_page_list">
+                <h2>
+                    women's stormbreaker
+                </h2>
+                <p>
+                1199,-
+                </p>
+            </section>
+            <section class="jacket_page_card">
+                <img src="/images/RainyDays_Jacket4.png" alt="sailor wing jacket for women" class="jacket_page_list">
+                <h2>
+                    women's sailor wing
+                </h2>
+                <p>
+                999,-
+                </p>
+            </section>
+        </section>
+    </main>
     <footer>
         <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">
         <p>

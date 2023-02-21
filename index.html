@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <title>Rainy Days</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/cadf1bec62.js" crossorigin="anonymous"></script>
+        <title>Rainy Days</title>
+    </head>
 <body>
     <header>
+        <a href="index.html">
+            <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">
+        </a>
+        <input type="checkbox" id="menu-checkbox"/>
+        <label for="menu-checkbox" class="hamburger-icon"><i class="fa-solid fa-bars"></i></label>
         <nav>
-            <a href="index.html">
-                <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">
-            </a>
-            <input type="text" placeholder="..Search">
-            <a href="checkout_page.html">   
-                <img src="images/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" class="shopping_cart">
-            </a>
+            <ul>
+                <li><a href="jacket_page_men.html">Men</a></li>
+                <li><a href="jacket_page_women.html">Women</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
-    </header>
-    <img src="/images/fil-mazzarino-unsplash-CROPPED.jpg" alt="woman running through a forest, ground covered in redbrown leaves" class="hero">
-    <div class="gender_jackets_box">
-        <section class="gender_jackets">
-            <a href="list_of_jackets_women.html">
-                <img src="images/womenjackets.jpg" alt="picture of a woman" class="gender_picture">
-                <p>
+        <div class="nav_right">
+        <input type="text" placeholder="..Search">
+        <a href="checkout_page.html">   
+            <img src="images/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" class="shopping_cart">
+        </a>
+        </div>
+</header>
+    <main class="main_index">
+        <img src="/images/fil-mazzarino-unsplash-CROPPED.jpg" alt="woman running through a forest, ground covered in redbrown leaves" class="hero">
+            <a href="list_of_jackets_women.html" class="womens_card_index">
+                <img src="images/womenjackets.jpg" alt="picture of a woman" class="womens_card_img">
+                <h2 class="h2_index">
                     women's jackets
-                </p>
+                </h2>
             </a>    
-        </section> 
-        <section class="gender_jackets">
-            <a href="list_of_jackets_men.html">
-                <img src="images/mensjackets.jpg" alt="picture of a man" class="gender_picture">
-                <p>
+            <a href="list_of_jackets_men.html" class="mens_card_index">
+                <img src="images/mensjackets.jpg" alt="picture of a man" class="mens_card_img">
+                <h2 class="h2_index">
                     men's jackets
-                </p>
+                </h2>
             </a>
-        </section>
-    </div>
-    <p>
-            get ready for the rain season with our new arrivals
-    </p>
-    <section>
-       <div class="index_jackets_box">
-        <img src="/images/RainyDays_Jacket2.png" alt="grey jacket" class="index_jackets">
-        <p>
-        899,-
-        </p>
-        <img src="/images/RainyDays_Jacket7.png" alt="green jacket" class="index_jackets">
-        <p>
-        999,-
-        </p>
-        <img src="/images/RainyDays_Jacket3.png" alt="red jacket" class="index_jackets">
-        <p>
-        999,- 
-        </p>
-    </div>
-    </section>
+        <div class="index_jackets_box">
+            <h2>
+                Get ready for the rain season with our new arrivals
+            </h2>
+            <img src="/images/RainyDays_Jacket2.png" alt="grey jacket" class="index_jackets">
+            <p>
+            899,-
+            </p>
+            <img src="/images/RainyDays_Jacket7.png" alt="green jacket" class="index_jackets">
+            <p>
+            999,-
+            </p>
+            <img src="/images/RainyDays_Jacket3.png" alt="red jacket" class="index_jackets">
+            <p>
+            999,- 
+            </p>
+        </div>
+    </main>
     <footer>
         <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">
         <p>
