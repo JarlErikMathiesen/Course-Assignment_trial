@@ -4,17 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The page where you see what is in your basket and can order it">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/cadf1bec62.js" crossorigin="anonymous"></script>
-        <title>Rainy Days</title>
+        <title>Rainy Days | Checkout Page</title>
     </head>
 <body> 
     <header>
         <a href="index.html">
             <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">
         </a>
-        <input type="checkbox" id="menu-checkbox"/>
+        <input type="checkbox" id="menu-checkbox">
         <label for="menu-checkbox" class="hamburger-icon"><i class="fa-solid fa-bars"></i></label>
         <nav>
             <ul>
@@ -26,10 +27,10 @@
         <div class="nav_right">
         <input type="text" placeholder="..Search">
         <a href="checkout_page.html">   
-            <img src="images/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" class="shopping_cart">
+            <img src="images/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" class="shopping_cart" alt="Shopping cart symbol">
         </a>
         </div>
-</header> 
+</header>
 <main class="checkout_page_main">
     <h1>
         shipping
@@ -49,39 +50,44 @@
             <label for="mail">Email:</label><br>
             <input type="text" id="mail" name="mail"><br>
         </form>
-        <section>
+        <div>
             <p>
             delivery
             </p>
+            <form>
             <div>
-                <input type="radio" id="postoffice" name="delivery">
-                <label for="postoffice">At post office</label>
+                    <input type="radio" id="postoffice" name="delivery">
+                    <label for="postoffice">At post office</label>
             </div>
             <div>
-                <input type="radio" id="home" name="delivery">
-                <label for="home">Home</label>
+                    <input type="radio" id="home" name="delivery">
+                    <label for="home">Home</label>
+
             </div>
-        </section>
-        <section>
+            </form>
+        </div>
+        <div>
             <p>
             payment
             </p>
-            <div>
-                <input type="radio" id="card" name="payment">
-                <label for="card">Card</label>
-            </div>
-            <div>
-                <input type="radio" id="vipps" name="payment">
-                <label for="vipps">Vipps</label>
-            </div>
-            <div>
-                <input type="radio" id="klarna" name="payment">
-                <label for="klarna">Klarna</label>
-            </div>
-        </section>
+            <form>
+                <div>
+                    <input type="radio" id="card" name="payment">
+                    <label for="card">Card</label>
+                </div>
+                <div>
+                    <input type="radio" id="vipps" name="payment">
+                    <label for="vipps">Vipps</label>
+                </div>
+                <div>
+                    <input type="radio" id="klarna" name="payment">
+                    <label for="klarna">Klarna</label>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="checkout_page_card">
-            <img src="/images/RainyDays_Jacket3.png" alt="alpha runner jacket for men" class="checkout_page_jacket">
+            <img src="/images/RainyDays_Jacket3.jpg" alt="alpha runner jacket for men" class="checkout_page_jacket">
             <h2>
                 Men's alpha runner
             </h2>
@@ -108,11 +114,9 @@
                 </p>
             </div>
     </div>
-        <a href="checkout_success.html">
-            <button type="button">
-                Next
-            </button>
-        </a>
+        <div class="blue-button checkout-button-next">
+        <a href="checkout_success.html">Next</a>
+        </div>
     </main>
     <footer>
         <img src="/images/RainyDays_Logo.png" alt="logo of rainy days" class="logo">

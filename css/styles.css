@@ -3,24 +3,35 @@
 
 header,
 footer {
-    display: flex;
     background-color:#BDD9F2 ;
-    padding: 0px 30px 0px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer {
-    margin-top: auto;
+    padding: 10px 30px 5px;
 }
 
 nav,
 #menu-checkbox {
-display: none;
+    display: none;
 }
 
 header {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-auto-flow: dense;
     position: relative;
+    align-items: center;
+}
+
+a,
+a:visited {
+    text-decoration: none; color: inherit;
+}
+
+a:hover {
+    transform: scale(102%);
+    transition-duration: 0.5s;
+}
+
+header a {
+    grid-column: 3;
 }
 
 main {
@@ -38,8 +49,46 @@ nav ul {
     padding: 0px
 }
 
-a {
-    text-decoration: none;
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    margin-top: auto;
+    justify-items: center;
+}
+
+footer .logo {
+    grid-column: 1/3;
+    justify-self: center;
+}
+
+nav {
+    position: absolute; 
+    background-color: #F5F5F5;
+}
+
+#menu-checkbox:checked ~ nav {
+    display: block;
+    top: 80px;
+    left: 8px;
+}
+
+nav a {
+    display: block;
+    padding: 10px 20px;
+}
+
+.nav_right {
+    grid-column: 5;
+}
+
+.nav_right input {
+    display: none;
+}
+
+.hamburger-icon {
+    grid-column: 1;
+    font-size: 1.5em;
 }
 
 body {
@@ -77,77 +126,47 @@ span {
     color: #404040;
 }
 
-
 .logo {
     max-width: 8em;
 }
 
-
-@media (max-width: 600px) {
-
-    header {
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(5,1fr);
-        grid-auto-flow: dense;
-    }
-    
-    header a {
-        text-decoration: none;
-        grid-column: 3;
-    }
-
-    footer {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        padding: 10px;
-    }
-
-    footer .logo {
-        grid-column: 1/3;
-        justify-self: center;
-    }
-
-    nav {
-        position: absolute; 
-        background-color: #F5F5F5;
-    }
-
-    #menu-checkbox:checked ~ nav {
-        display: block;
-        top: 80px;
-        left: 8px;
-    }
-
-    nav a {
-        display: block;
-        padding: 10px 20px;
-    }
-
-    .nav_right {
-        grid-column: 5;
-    }
-
-    .nav_right input {
-        display: none;
-    }
-
-    .hamburger-icon {
-        grid-column: 1;
-        font-size: 1.5em;
-    }
+.blue-button
+ {
+    background-color: #0087FF;
+    color: white;
+    border: #0087FF solid 2px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 20px;
+	font-weight: 700;
 }
 
+.blue-button:hover {
+    background-color: white;
+    color: #0087FF;
+    transform: scale(102%);
+    transition-duration: 0.5s;
+}
+
+.price-tag p {
+    font-size: 30px;
+    font-weight: 700;
+}
 
 /*Home Page*/
-
 
 .main_index {
     display: grid;
     gap: 10px;
     grid-template-rows: auto auto auto auto;
 }
+
+.h1-index {
+    grid-column: 1/5;
+    justify-self: center;
+    font-size: 0px;
+    visibility: hidden;
+    }
 
 .h2_index {
 	font-size: 25px;
@@ -164,8 +183,8 @@ span {
     grid-template-columns: 1fr 1fr;
     grid-column: 1/5;
     border-radius: 15px;
-}
 
+}
 
 .womens_card_img,
 .mens_card_img {
@@ -198,8 +217,6 @@ span {
     grid-column: 1/4;
 }
 
-
-
 /* About Page*/
 
 .main_about {
@@ -216,84 +233,41 @@ span {
 
 .about_box {
 	display: grid;
-	grid-template-rows: auto 1fr;
-	grid-template-columns: 1fr 1fr;
     justify-items: center;
     margin-bottom: 25px;
     gap: 10px;
 }
 
-
-.about_heading_a {
-    font-size: 30px;
+.about_box {
+    grid-template-columns: 1fr;
 }
 
 .about_bodytext {
     max-width: 600px;
-
 }
 
 .about_image_a {
 	width: 100%;
 	border-radius: 20px;
-	height: 419px;
+    height: 200px;
 	object-fit: cover;
-	object-position: 0% 68%;
+    object-position: 0% 18%;
+}
+
+.about_image_b {
+	width: 100%;
+	border-radius: 20px;
+	object-fit: cover;
+    height: 200px;
+}
+
+.about_heading_a {
+    font-size: 30px;
 }
 
 .about_heading_b {
     font-size: 30px;
 }
-.about_image_b {
-	width: 100%;
-	border-radius: 20px;
-	object-fit: cover;
-	object-position: 0% 53%;
-	height: 482px;
-}
-
-@media (max-width: 599px) {
-
-/*About*/
-
-    .about_box {
-        grid-template-columns: 1fr;
-    }
-
-    .about_image_a {
-        height: 200px;
-        object-position: 0% 57%;
-    }
-
-    .about_image_b {
-        height: 200px;
-    }
-
-}
-
-@media (min-width: 600px) {
-
-/*About*/
-
-    .about_image_a {
-        grid-column: 2/3;
-        grid-row: -3/-1;
-    }
-
-    .about_heading_a {
-        grid-column: 1/2;
-    }
-
-    .about_heading_b {
-        grid-column: 2 ;
-    }
-
-    .about_image_b {
-        grid-row: 1/3;
-    }
-
-}
-
 
 /*Checkout Page*/
 
@@ -320,41 +294,11 @@ span {
     grid-column: 1/4;
 }
 
-
 .checkout_page_main h1 {
 	grid-column: 1/3;
 	grid-row: 1;
     text-transform: capitalize;
 }
-
-.checkout_page_main a {
-    grid-column: 3;
-    justify-self: center;
-    margin: inherit;
-}
-
-.checkout_page_main a button, 
-.checkout_page_main a button:hover {
-    border: #0087FF solid 2px;
-    border-radius: 5px;
-    text-transform: capitalize;
-    width: 152px;
-    height: 60px;
-    font-size: 30px;
-    font-weight: 600;
-}
-
-.checkout_page_main a button {
-    background-color: #0087FF;
-    color: white;
-
-}
-
-.checkout_page_main a button:hover {
-    background-color: white;
-    color: #0087FF;
-}
-
 
 .checkout_page_card div {
 	grid-column: -3/-1;
@@ -386,7 +330,56 @@ span {
     margin-bottom: 7px;
 }
 
+.checkout-button-next {
+	padding: 12px 40px;
+	grid-column: 3;
+	justify-self: center;
+	margin: inherit;
+}
 
+/*Checkout Success Page*/
+
+
+.main_checkout {
+	display: grid;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	grid-template-rows: 4fr 1fr 1fr 2fr;
+	gap: 1rem;
+	margin: 20px;
+}
+
+.main_checkout a {
+    justify-self: center;
+}
+
+.back-to-main-button {
+	border: #0087FF solid 2px;
+	border-radius: 5px;
+	text-transform: capitalize;
+	background-color: #0087FF;
+	color: white;
+	font-size: 20px;
+	justify-self: center;
+	padding: 15px;
+	font-weight: 600;
+}
+
+.check_circle {
+    justify-self: center;
+    width: 8em;
+}
+
+.ordsuc1 {
+    font-size: 20px;
+    justify-self: center;
+}
+
+.ordsuc2 {
+    font-size: 15px;
+    justify-self: center;
+}
 
 /*Contact Page*/
 
@@ -412,24 +405,15 @@ span {
     padding-bottom: 200px;
 }
 
-.main_contact button {
-	padding: 10px;
+.contact-send-button {
+	padding: 12px 45px;
 	margin: 20px;
-	font-size: 20px;
-	font-weight: 700;
-	border-radius: 10px;
-	border: solid #0087FF 2px;
 	align-self: center;
-	background-color: #0087FF;
-	color: white;
-	width: 120px;
-	height: 50px;
 }
 
 /*Jacket Page*/
 
 .jacket_headline {
-    display: grid;
     text-transform: capitalize;
 	font-size: 25px;
 	grid-column: 1/3;
@@ -472,8 +456,7 @@ span {
 	align-self: center;
 }
 
-.jacket_page_buttons button, 
-.jacket_page_buttons button:hover {
+.jacket_page_buttons button {
 	margin: 5px;
 	border: #BDD9F2 solid 3px;
 	border-radius: 5px;
@@ -483,7 +466,8 @@ span {
 	height: 40px;
 }
 
-.jacket_page_buttons button:hover {
+.jacket_page_buttons button:hover,
+.jacket_page_addnr button:hover {
     background-color: #BDD9F2;
 }
 
@@ -493,23 +477,9 @@ span {
 	justify-self: center;
 }
 
-.jacket_page_addbasket button, 
-.jacket_page_addbasket button:hover {
-	font-size: 20px;
-	font-weight: 700;
-	border-radius: 10px;
-	border: solid #0087FF 2px;
-	align-self: center;
-	background-color: #0087FF;
-	color: white;
-	width: 120px;
-	height: 60px;
-}
-
-.jacket_page_addbasket button:hover {
-
-    background-color: white;
-    color: #0087FF;
+.add-to-basket-button {
+	max-width: 82px;
+	padding: 10px;
 }
 
 .jacket_page_addnr {
@@ -520,10 +490,10 @@ span {
 }
 
 .jacket_page_addnr button {
-	background: #BDD9F2;
+	background: white;
 	margin: 10px;
 	border-radius: 5px;
-	border: #BDD9F2;
+	border: #BDD9F2 solid 3px;
 	width: 40px;
 	height: 40px;
 }
@@ -552,9 +522,6 @@ span {
     font-weight: 700;
 }
 
-
-
-
 /*List of Jackets Page*/
 
 .cardhead {
@@ -578,7 +545,6 @@ span {
     grid-column: -1/1;
     text-transform: capitalize;
     font-size: 50px;
-
 }
 
 .list_of_jackets_card {
@@ -592,12 +558,6 @@ span {
     font-size: 15px;
 }
 
-.list_of_jackets_card p {
-    font-size: 30px;
-    font-weight: 700;
-    
-}
-
 .list_of_jackets_img {
     width: 100%;
     grid-row: 1/4 ;
@@ -605,144 +565,27 @@ span {
     max-width: 100%;
 }
 
-@media (min-width: 480px) {
-
-    .list_of_jackets_card ul {
-        font-size: 20px;
-    }
-    
-    .list_of_jackets_card p {
-        font-size: 35px;       
-    }
-
-    .cardhead {
-        font-size: 30px;
-    }
-}
-
-@media (min-width: 800px) {
-
-    .list_of_jackets_img {
-        min-width: 11em;
-    }
-
-    .list_of_jackets_box {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-    }
-}
-
-@media (min-width: 1150px) {
-    .list_of_jackets_box {
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-    }
-    
-}
-
-
-
-/*Checkout Success Page*/
-
-
-.main_checkout {
-	display: grid;
-	align-items: center;
-	align-content: center;
-	justify-content: center;
-	grid-template-rows: 4fr 1fr 1fr 2fr;
-	gap: 1rem;
+.show-more-button {
+    padding: 12px 45px;
 	margin: 20px;
+	align-self: center;
 }
-
-.main_checkout a {
-    justify-self: center;
-}
-
-.main_checkout a button {
-	border: #0087FF solid 2px;
-	border-radius: 5px;
-	text-transform: capitalize;
-	background-color: #0087FF;
-	width: 152px;
-	height: 60px;
-	color: white;
-	font-size: 15px;
-}
-
-.main_checkout a button:hover {
-	border: #0087FF solid 2px;
-	border-radius: 5px;
-	text-transform: capitalize;
-	background-color: white;
-	width: 152px;
-	height: 60px;
-	color: #0087FF;
-	font-size: 15px;
-}
-
-.check_circle {
-    justify-self: center;
-    width: 8em;
-}
-
-.ordsuc1 {
-    font-size: 20px;
-    justify-self: center;
-}
-
-.ordsuc2 {
-    font-size: 15px;
-    justify-self: center;
-}
-
 
 /*Media Queries*/
 
-
-
-@media (min-width: 600px) {
+@media (min-width: 500px) {
     
-    .check_circle {
-        width: 8em; 
+    .checkout_page_forms {
+        grid-column: 1;
     }
 
-    .hamburger-icon {
-        display: none;
+    .checkout_page_card {
+        grid-row: 1/3;
+        grid-column: 3/4;
     }
-
-    nav,
-    nav ul {
-        display: flex;
-        gap: 40px;
-        font-size: 22px;
-    }
-
-    .nav_right {
-        display: contents;
-    }
-
-}
-
-@media (min-width: 1000px) {
-    .list_of_jackets_box {
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-    }
-    
-    .check_circle {
-        width: 14em; 
-    }
-
-}
-
-
-
-/*Media queries jacket pages*/
-
-@media (min-width: 499px) {
-    
-    .jacket_page_buttons button, .jacket_page_buttons button:hover {
+   
+    .jacket_page_buttons button, 
+    .jacket_page_buttons button:hover {
         width: 60px;
         height: 60px;
     }
@@ -761,19 +604,73 @@ span {
         font-size: 25px;
     }
 
+    .index_jackets_box {
+        display: grid; 
+        grid-template-columns: repeat(3,1fr); 
+        grid-template-rows: repeat(3,auto); 
+        grid-auto-flow: column; 
+        gap: 5px; 
+    }
+
+    .list_of_jackets_card ul {
+        font-size: 20px;
+    }
+
+    .cardhead {
+        font-size: 30px;
+    }
 }
 
+@media (min-width: 600px) {
 
-@media (min-width: 599px) {
+    .checkout_page_card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        }
+
+    .about_box {
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about_image_a {
+        grid-column: 2/3;
+        grid-row: -3/-1;
+        height: 419px;
+    }
+
+    .about_heading_a {
+        grid-column: 1/2;
+    }
+
+    .about_heading_b {
+        grid-column: 2 ;
+    }
+
+    .about_image_b {
+        grid-row: 1/3;
+        height: 482px;
+    }
 
     .jacket_page_prime {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, auto);
     }
 
+    .check_circle {
+        width: 8em; 
+    }
+
+    .womens_card_index {
+        grid-column: 1/3;
+    }
+
+    .mens_card_index {
+        grid-column: 3/5;
+    }
 }
 
-@media (min-width: 699px) {
+@media (min-width: 700px) {
 
     .jacket_page_prime {
         grid-template-columns: repeat(6, 1fr);
@@ -832,7 +729,18 @@ span {
     }
 }
 
-@media (min-width: 899px) {
+@media (min-width: 800px) {
+    
+    .list_of_jackets_img {
+        min-width: 11em;
+    }
+
+    .list_of_jackets_box {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
 
     .jacket_page_prime {
         grid-template-columns: repeat(7, 1fr);
@@ -875,76 +783,100 @@ span {
         grid-row: 2;
     }
 
+    header,
+    footer {
+        display: flex;
+        background-color:#BDD9F2 ;
+        padding: 0px 30px 0px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer {
+        padding: 5px 30px 5px;
+    }
+
+    nav {
+        position: static; 
+        background: none;
+    }
+
+    nav,
+    #menu-checkbox {
+    display: none;
+    }
+
+    main {
+        margin: 15px;
+    }
+
+    .nav_right input {
+        border-radius: 30px;
+        padding: 10px;
+        border: none;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0px
+    }
+
+    nav,
+    nav ul {
+        display: flex;
+        gap: 40px;
+        font-size: 22px;
+    }
+
+    .nav_right {
+        display: contents;
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
 }
 
-/*Media queries*/
+@media (min-width: 1000px) {
 
-@media (min-width: 499px) {
+    .check_circle {
+        width: 14em; 
+    }
 
     .index_jackets_box {
-        display: grid; 
-        grid-template-columns: repeat(3,1fr); 
-        grid-template-rows: repeat(3,auto); 
-        grid-auto-flow: column; 
-        gap: 5px; 
-    }
-    
-    }
-    
-    @media (min-width: 599px) {
-        .womens_card_index {
-            grid-column: 1/3;
-        }
-    
-        .mens_card_index {
-            grid-column: 3/5;
-        }
-    }
-    
-    @media (min-width: 999px) {
-        .womens_card_index,
-        .mens_card_index {
-            grid-template-columns: 1fr;
-        }
-    
-        .womens_card_index {
-            grid-column: 1;
-        }
-    
-        .mens_card_index {
-            grid-column: 2;
-        }
-    
-        .index_jackets_box {
-            grid-column: 3/5;
-        }
-    
-        .index_jackets {
-            width: 60%;
-        }
-    
-        .womens_card_img,
-        .mens_card_img {
-            border-radius: 15px 15px 0px 0px;
-        }
+        grid-column: 3/5;
     }
 
-    @media (min-width: 800px) {
+    .index_jackets {
+        width: 60%;
+    }
+
+    .mens_card_index {
+        grid-column: 2;
+    }
+
+    .womens_card_index,
+    .mens_card_index {
+        grid-template-columns: 1fr;
+    }
+
+    .womens_card_index {
+        grid-column: 1;
+    }
+
+    .womens_card_img,
+    .mens_card_img {
+        border-radius: 15px 15px 0px 0px;
+    }
+}
     
-        .checkout_page_card {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        }
-    
+@media (min-width: 1150px) {
+
+    .list_of_jackets_box {
+        grid-template-columns: 1fr 1fr 1fr;
     }
     
-    @media (min-width: 480px) {
-        .checkout_page_forms {
-            grid-column: 1;
-        }
-    
-        .checkout_page_card {
-            grid-row: 1/3;
-            grid-column: 3/4;
-        }
-    }
+}
+
+
+
