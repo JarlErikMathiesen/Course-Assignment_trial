@@ -34,6 +34,16 @@ header a {
     grid-column: 3;
 }
 
+.loader {
+    border: 16px solid #BDD9F2; 
+    border-top: 16px solid #0087FF;
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    animation: spin 2s linear infinite;
+    grid-column: 4;
+  }
+
 main {
     margin: 15px;
 }
@@ -147,6 +157,11 @@ span {
     transform: scale(102%);
     transition-duration: 0.5s;
 }
+
+.error {
+    font-size: 75px;
+}
+
 
 .price-tag p {
     font-size: 30px;
@@ -445,7 +460,12 @@ span {
 }
 
 .jacket_page_list {
-    width: 10em;
+	max-width: 13em;
+	max-height: 13em;
+}
+
+.jacket_page_description {
+    width: 15em;
 }
 
 .jacket_page_buttons {
@@ -512,9 +532,9 @@ span {
 }
 
 .jacket_page_card h2 {
-    text-transform: capitalize;
-    font-size: 20px;
-    max-width: 8em;
+	text-transform: capitalize;
+	font-size: 23px;
+	max-width: 11em;
 }
 
 .jacket_page_card p {
@@ -558,12 +578,27 @@ span {
     font-size: 15px;
 }
 
+.list_of_jackets p {
+    margin-top: -17px;
+    font-size: 15px;
+}
+
+.list_of_jackets_price-tag {
+    font-size: 30px;
+    font-weight: 600;
+}
+
 .list_of_jackets_img {
     width: 100%;
     grid-row: 1/4 ;
     min-width: 10em;
     max-width: 100%;
 }
+
+.gender {
+    
+}
+
 
 .show-more-button {
     padding: 12px 45px;
@@ -605,11 +640,11 @@ span {
     }
 
     .index_jackets_box {
-        display: grid; 
-        grid-template-columns: repeat(3,1fr); 
-        grid-template-rows: repeat(3,auto); 
-        grid-auto-flow: column; 
-        gap: 5px; 
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,auto);
+        grid-auto-flow: column;
+        gap: 5px;
     }
 
     .list_of_jackets_card ul {
@@ -877,6 +912,10 @@ span {
     }
     
 }
+  
 
 
-
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
