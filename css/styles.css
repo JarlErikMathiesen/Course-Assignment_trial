@@ -41,7 +41,8 @@ header a {
     width: 220px;
     height: 220px;
     animation: spin 2s linear infinite;
-    grid-column: 4;
+    grid-column: 2;
+    margin: auto;
   }
 
 main {
@@ -219,6 +220,7 @@ span {
 
 .index_jackets {
     width: 80%;
+    grid-column: 1/4;
 }
 
 .index_jackets_box {
@@ -226,6 +228,7 @@ span {
 	border: #BDD9F2 solid 10px;
 	border-radius: 30px;
 	padding: 10px;
+    align-items: flex-end;
 }
 
 .index_jackets_box h2 {
@@ -588,15 +591,18 @@ span {
     font-weight: 600;
 }
 
-.list_of_jackets_img {
-    width: 100%;
-    grid-row: 1/4 ;
-    min-width: 10em;
-    max-width: 100%;
+.list_of_jackets_price-tag-old {
+    font-size: 30px;
+    font-weight: 600;
+    color: #888888;
+    text-decoration-line: line-through;
 }
 
-.gender {
-    
+.list_of_jackets_img {
+    width: 100%;
+    grid-row: 1/4;
+    min-width: 10em;
+    max-width: 100%;
 }
 
 
@@ -883,7 +889,7 @@ span {
     }
 
     .index_jackets {
-        width: 60%;
+        width: 80%;
     }
 
     .mens_card_index {
@@ -912,8 +918,6 @@ span {
     }
     
 }
-  
-
 
   @keyframes spin {
     0% { transform: rotate(0deg); }
