@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
     <link href="css/styles.css" rel="stylesheet" />
+    <script defer src="JS/forms.js"></script>
     <script
       src="https://kit.fontawesome.com/cadf1bec62.js"
       crossorigin="anonymous"
@@ -66,19 +67,22 @@
       <p>
         If you are wondering about anything, please contact us using this form.
       </p>
-      <form>
-        <label for="fname">Full Name</label><br />
+      <div id="error"></div>
+      <form id="form">
+        <label for="name">Full Name</label><br />
         <input
           class="input_style"
+          required
           type="text"
           placeholder="..."
-          id="fname"
-          name="fname"
+          id="name"
+          name="name"
         /><br />
         <label for="mail">E-mail</label><br />
         <input
           class="input_style"
           type="text"
+          required
           placeholder="..."
           id="mail"
           name="mail"
@@ -87,6 +91,7 @@
         <input
           class="input_style"
           type="text"
+          required
           placeholder="..."
           id="phone"
           name="phone"
@@ -95,14 +100,15 @@
         <input
           class="input_message input_style"
           type="text"
+          required
           placeholder="..."
           id="write"
           name="write"
         /><br />
+        <button class="orange-button submit-button" type="submit">
+          Submit
+        </button>
       </form>
-      <button type="button" class="blue-button contact-send-button">
-        Send
-      </button>
     </main>
     <footer>
       <img

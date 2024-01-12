@@ -62,21 +62,21 @@
       </div>
     </header>
     <main class="checkout_page_main">
-      <h1>shipping</h1>
+      <h1>checkout</h1>
       <div class="checkout_page_forms">
         <form>
           <label for="fname">First name:</label><br />
-          <input type="text" id="fname" name="fname" /><br />
+          <input class="input_style" type="text" id="fname" name="fname" required/><br />
           <label for="lname">Last name:</label><br />
-          <input type="text" id="lname" name="lname" /><br />
-          <label for="adress">Adress:</label><br />
-          <input type="text" id="adress" name="adress" /><br />
+          <input class="input_style" type="text" id="lname" name="lname" /><br />
+          <label for="address">Address:</label><br />
+          <input class="input_style" type="text" id="address" name="address" /><br />
           <label for="zcode">Zip Code:</label><br />
-          <input type="text" id="zcode" name="zcode" /><br />
+          <input class="input_style" type="text" id="zcode" name="zcode" /><br />
           <label for="town">Town:</label><br />
-          <input type="text" id="town" name="town" /><br />
+          <input class="input_style" type="text" id="town" name="town" /><br />
           <label for="mail">Email:</label><br />
-          <input type="text" id="mail" name="mail" /><br />
+          <input class="input_style" type="text" id="mail" name="mail" /><br />
         </form>
         <div>
           <p>delivery</p>
@@ -109,27 +109,12 @@
           </form>
         </div>
       </div>
-      <div class="checkout_page_card">
-        <img
-          src="/images/RainyDays_Jacket3.jpg"
-          alt="alpha runner jacket for men"
-          class="checkout_page_jacket"
-        />
-        <h2>Men's alpha runner</h2>
-        <ul>
-          <li>Made for outdoor sports</li>
-          <li>Super light</li>
-          <li>High breathability</li>
-        </ul>
-        <div>
-          <p>Men's alpha runner</p>
-          <p>Total</p>
-          <p>999,-</p>
+        <div id="specific_jacket">
         </div>
       </div>
-      <div class="blue-button checkout-button-next">
-        <a href="checkout_success.html">Next</a>
-      </div>
+      <a class="checkout-button-link" href="checkout_success.html">
+        <button class="orange-button checkout-button-next">Pay</button>
+      </a>
     </main>
     <footer>
       <img
@@ -148,5 +133,6 @@
       </a>
       <p>washing instructions</p>
     </footer>
+    <script src="JS\checkout.js"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 const url ="https://api.noroff.dev/api/v1/rainy-days";
 const jacketSale = document.querySelector(".index_jackets_box");
-const currency = "kr";
+const currency = "$";
 
 async function jacketList() {
 
@@ -32,26 +32,28 @@ async function jacketList() {
           const jacketsImage = jackets[i].image;
           const jacketsPrice = jackets[i].price;
           const jacketsId = jackets[i].id;
-          const jacketsDiscount = jackets[i].discountedPrice;
+          const jacketsDiscPrice = jackets[i].discountedPrice;
+        
 
-            
+        
           jacketSale.innerHTML += `<div>                    
-                                        <a href="jacket_page.html?id=${jacketsId}" class="cardlink list_of_jackets_card"> 
-                                            <img class="index_jackets" src=${jacketsImage}>
-                                            <h2 class="cardhead">
+                                        <a href="jacket_page.html?id=${jacketsId}" class="cardlink index_jackets_card"> 
+                                        <img class="index_jackets_img" src=${jacketsImage} alt="Image of ${jackets[i].title}">
+                                            <h3>
                                                 ${jacketTitle}
-                                            </h2>
-                                            <p class="list_of_jackets_price-tag-old">
-                                                ${jacketsPrice} ${currency}
-                                            </p>
-                                            <p class="list_of_jackets_price-tag">
-                                                ${jacketsDiscount} ${currency}
+                                            </h3>
+                                            <p>
+                                            ${jacketsDiscPrice < jacketsPrice ? 
+                                                `<span class="discount_price-tag">${jacketsDiscPrice} ${currency}</span> 
+                                                <span class="price-tag-old">${jacketsPrice} ${currency}</span>` :
+                                                `${jacketsPrice} ${currency}`
+                                            }
                                             </p>
                                         </a>
                                     </div>`;
         }
     }   catch(error){
-        jacketSale.innerHTML =   `<div class="error">An error occured loading the page</div>`;
+        jacketSale.innerHTML =   `<div class="error">An error occured loading the page, try reloading the page. If the problem persist contact us on help@rainydays.com</div>`;
     }     
 }
 

@@ -1,6 +1,6 @@
 const url ="https://api.noroff.dev/api/v1/rainy-days";
 const jacketContainer = document.querySelector(".list_of_jackets_box");
-const currency = "kr";
+const currency = "$";
 
 async function jacketList() {
 
@@ -28,19 +28,26 @@ async function jacketList() {
           const jacketsDescription = jackets[i].description;
           const jacketsPrice = jackets[i].price;
           const jacketsId = jackets[i].id;
-
+          const jacketsDiscPrice = jackets[i].discountedPrice;
             
+
+
+
           jacketContainer.innerHTML += `<div>                    
                                             <a href="jacket_page.html?id=${jacketsId}" class="cardlink list_of_jackets_card"> 
-                                                <img class="list_of_jackets_img" src=${jacketsImage}>
+                                                <img class="list_of_jackets_img" src=${jacketsImage} alt="Image of ${jacketTitle}">
                                                 <h2 class="cardhead">
                                                     ${jacketTitle}
                                                 </h2>
-                                                <p class="list_of_jackets p">
+                                                <p class="list_of_jackets_p">
                                                     ${jacketsDescription}
                                                 </p>
                                                 <p class="list_of_jackets_price-tag">
-                                                    ${jacketsPrice} ${currency}
+                                                ${jacketsDiscPrice < jacketsPrice ? 
+                                                    `<span class="discount_price-tag">${jacketsDiscPrice} ${currency}</span> 
+                                                    <span class="price-tag-old">${jacketsPrice} ${currency}</span>` :
+                                                    `${jacketsPrice} ${currency}`
+                                                }
                                                 </p>
                                             </a>
                                         </div>`;
