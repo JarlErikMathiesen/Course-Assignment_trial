@@ -159,7 +159,7 @@ span {
 .orange-button
  {
     background-color: #FF7800;
-    color: white;
+    color: black;
     border: #FF7800 solid 2px;
     border-radius: 5px;
     text-transform: capitalize;
@@ -171,7 +171,7 @@ span {
 
 .orange-button:hover {
     background-color: white;
-    color: #FF7800;
+    color: black;
     transform: scale(102%);
     transition-duration: 0.5s;
 }
@@ -418,7 +418,7 @@ span {
 	border-radius: 5px;
 	text-transform: capitalize;
 	background-color: #FF7800;
-	color: white;
+	color: black;
 	font-size: 20px;
 	justify-self: center;
 	padding: 15px;
