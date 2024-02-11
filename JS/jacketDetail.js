@@ -11,7 +11,8 @@ async function jacketSingle() {
     try {
 
       const response = await fetch(urlSingle);
-
+      console.log(id);
+      console.log(urlSingle);
       if (!response.ok) {
         throw new Error();
     }
