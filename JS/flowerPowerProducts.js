@@ -1,6 +1,6 @@
 const baseUrl = "http://jarlerm.no/wp-json/wc/store/products";
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + baseUrl;
-const container = document.querySelector(".products");
+const container = document.querySelector(".list_of_jackets_box");
 const containerThumbnails = document.querySelector(".thumbnails")
 
 async function getProducts (url) {
@@ -16,19 +16,22 @@ async function getProducts (url) {
     console.log(products[0].images[0].src);
     console.log(products[0].images[0].thumbnail);
 
-    container.innerHTML =`<h1>Products</h1>`
+    container.innerHTML = `<h1>Products</h1>
+                            <button class="sort-button">A-B</button>`
 
 
-    for (let i = 0; i < products.length; i++) {
-    
-        const productName = products[i].name;
-        const productDescription = products[i].short_description;
-        const productImage = products[i].images[0].src;
-        const productId = products[i].id;
-        const productPrice = products[i].prices.price;
-        const productCurrency = products[i].prices.currency_prefix;
 
-
+    function createHtml(products){
+        container.innerHTML = "";
+        products.forEach(function(product){
+        const productName = product.name;
+        const productDescription = product.short_description;
+        const productImage = product.images[0].src;
+        const productId = product.id;
+        const productCurrency = product.prices.currency_prefix;
+        const basePrice = product.prices.price;
+        const productPrice = basePrice / 100;
+        
         container.innerHTML += `<div>
         <a href="flower_power_productsingle.html?id=${productId}"> 
                 <h2>${productName}</h2>
@@ -37,7 +40,42 @@ async function getProducts (url) {
                 <p>${productDescription}</p>
         </a>
                 </div>`
-    }
+    })
+}
+
+createHtml(products);
+
+
+    document.querySelector(".sort-button-price").addEventListener("click", function(){
+        products.sort(function(a,b){
+            if (a.prices.price > b.prices.price){
+                return 1;
+            }
+            else if (a.prices.price < b.prices.price){
+                return -1;
+            }
+            else {
+                return 0;
+            }    
+        });
+        createHtml(products);
+    })
+
+    document.querySelector(".sort-button-name").addEventListener("click", function(){
+        products.sort(function(a,b){
+            if (a.name > b.name){
+                return 1;
+            }
+            else if (a.name < b.name){
+                return -1;
+            }
+            else {
+                return 0;
+            }    
+        });
+        createHtml(products);
+    })
+
 
     }
 

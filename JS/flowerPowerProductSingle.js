@@ -17,23 +17,30 @@ async function getProduct (url) {
 
     console.log(product);
     console.log(urlPar);
-    console.log(product.prices.price);
+    console.log(product.short_description);
 
     const productName = product.name;
     const productDescription = product.short_description;
     const productImage = product.images[0].src;
     const productAttributes = product.description;
-    const productPrice = product.prices.price;
+    const basePrice = product.prices.price;
     const productCurrency = product.prices.currency_prefix;
-
+    const productPrice = basePrice / 100;
 
     
-    container.innerHTML += `<div>
+    
+    const productDescriptionClass = productDescription.replace("<p>", '<p class="FPS_description">');
+    const productAttributesClass = productAttributes.replace("<p>", '<p class="FPS_attributes">');
+
+    console.log(productDescriptionClass);
+
+    
+    container.innerHTML = `<div class="FPS_box">
     <h2>${productName}</h2>
     <img src=${productImage}>
-    <p class="list_of_jackets_price-tag">${productCurrency}${productPrice}</p>
-    <p>${productDescription}</p>
-    <p>${productAttributes}</p>
+    <p class="FPS_price-tag">${productCurrency}${productPrice}</p>
+    ${productDescriptionClass}
+    ${productAttributes}</p>
     </div>`
     }
 
