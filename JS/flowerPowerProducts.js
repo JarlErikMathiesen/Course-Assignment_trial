@@ -10,16 +10,7 @@ async function getProducts (url) {
     const json = await response.json();
     const products = json;
 
-    console.log(products);
-    console.log(products.length);
-    console.log(products[0].short_description);
-    console.log(products[0].images[0].src);
-    console.log(products[0].images[0].thumbnail);
-
-    container.innerHTML = `<h1>Products</h1>
-                            <button class="sort-button">A-B</button>`
-
-
+    container.innerHTML = `<h1>Products</h1>`   
 
     function createHtml(products){
         container.innerHTML = "";
@@ -46,46 +37,40 @@ async function getProducts (url) {
 createHtml(products);
 
 
-    document.querySelector(".sort-button-price").addEventListener("click", function(){
-        products.sort(function(a,b){
-            if (a.prices.price > b.prices.price){
-                return 1;
-            }
-            else if (a.prices.price < b.prices.price){
-                return -1;
-            }
-            else {
-                return 0;
-            }    
-        });
+document.querySelector(".sort-button").addEventListener("click", function () {
+    const selectedSortValue = document.querySelector('input[name="sortbutton"]:checked').value;
+
+    switch (selectedSortValue) {
+        case "lowprice":
+            products.sort(function (a, b) {
+                return a.prices.price - b.prices.price;
+            });
+            break;
+        case "highprice":
+            products.sort(function (a, b) {
+                return b.prices.price - a.prices.price;
+            });
+            break;
+        case "nameasc":
+            products.sort(function (a, b) {
+                return a.name.localeCompare(b.name);
+            });
+            break;
+        case "namedesc":
+            products.sort(function (a, b) {
+                return b.name.localeCompare(a.name);
+            });
+            break;
+        default:
+            break;
+    }
         createHtml(products);
     })
-
-    document.querySelector(".sort-button-name").addEventListener("click", function(){
-        products.sort(function(a,b){
-            if (a.name > b.name){
-                return 1;
-            }
-            else if (a.name < b.name){
-                return -1;
-            }
-            else {
-                return 0;
-            }    
-        });
-        createHtml(products);
-    })
-
-
+    
     }
-
-    catch(error) {
-        console.log(error);
-    }
-
-
-
-
+    catch (error) {
+        container.innerHTML =   `<div class="error">An error occured loading the page</div>`;
+    }    
 }
 
 getProducts(corsEnabledUrl);

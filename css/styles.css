@@ -686,6 +686,12 @@ span {
 	grid-column: 3/4;
 }
 
+
+.sorting , .sort-radio-buttons {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .FPS_box {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -15,10 +15,6 @@ async function getProduct (url) {
     const json = await response.json();
     const product = json;
 
-    console.log(product);
-    console.log(urlPar);
-    console.log(product.short_description);
-
     const productName = product.name;
     const productDescription = product.short_description;
     const productImage = product.images[0].src;
@@ -31,22 +27,19 @@ async function getProduct (url) {
     
     const productDescriptionClass = productDescription.replace("<p>", '<p class="FPS_description">');
     const productAttributesClass = productAttributes.replace("<p>", '<p class="FPS_attributes">');
-
-    console.log(productDescriptionClass);
-
     
     container.innerHTML = `<div class="FPS_box">
     <h2>${productName}</h2>
     <img src=${productImage}>
     <p class="FPS_price-tag">${productCurrency}${productPrice}</p>
     ${productDescriptionClass}
-    ${productAttributes}</p>
+    ${productAttributesClass}</p>
     </div>`
     }
 
-    catch(error) {
-        console.log(error);
-    }
+    catch (error) {
+        container.innerHTML =   `<div class="error">An error occured loading the page</div>`;
+    }    
 }
 
 getProduct(urlSingle);

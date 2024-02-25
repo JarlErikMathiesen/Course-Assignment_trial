@@ -54,8 +54,27 @@
     </header>
     <main>
       <h1>Products</h1>
-        <button class="sort-button-price">sort by price</button>
-        <button class="sort-button-name">sort by name</button>
+      <section class="sorting">
+        <button class="sort-button">Sort</button>
+        <form class="sort-radio-buttons">
+          <div>
+              <input type="radio" id="lowprice" name="sortbutton" value="lowprice">
+              <label for="lowprice">Price Low-High</label>
+          </div>
+          <div>
+              <input type="radio" id="highprice" name="sortbutton" value="highprice">
+              <label for="highprice">Price High-Low</label>
+          </div>
+          <div>
+              <input type="radio" id="nameasc" name="sortbutton" value="nameasc">
+              <label for="nameasc">Name A-Z</label>
+          </div>
+          <div>
+              <input type="radio" id="namedesc" name="sortbutton" value="namedesc">
+              <label for="namedesc">Name Z-A</label>
+          </div>
+      </form>
+    </section>
       <div class="list_of_jackets_box">
       </div>
     </main>

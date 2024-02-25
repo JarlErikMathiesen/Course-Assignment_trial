@@ -1,5 +1,4 @@
 import { baseUrl } from "./constants.js";
-/* const baseUrl = "http://jarlerm.no/wp-json/wc/store/products"; */
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + baseUrl;
 const container = document.querySelector(".products");
 const containerThumbnails = document.querySelector(".thumbnails")
@@ -19,7 +18,6 @@ async function getProducts (url) {
         const productName = products[i].name;
         const productThumbnail = products[i].images[0].thumbnail;
 
-
         containerThumbnails.innerHTML += `<div>
                                             <img src=${productThumbnail}>
                                             <p>${productName}</p>
@@ -28,9 +26,9 @@ async function getProducts (url) {
 
     }
 
-    catch(error) {
-        console.log(error);
-    }
+    catch (error) {
+        containerThumbnails.innerHTML =   `<div class="error">An error occured loading the page</div>`;
+    }    
 
 
 
