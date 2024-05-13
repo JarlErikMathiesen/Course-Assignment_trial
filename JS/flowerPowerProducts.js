@@ -9,7 +9,10 @@ async function getProducts (url) {
     const response = await fetch(url);
     const json = await response.json();
     const products = json;
+    console.log(products);
 
+    console.log(products[0].short_description);
+    
     container.innerHTML = `<h1>Products</h1>`   
 
     function createHtml(products){
@@ -37,35 +40,36 @@ async function getProducts (url) {
 createHtml(products);
 
 
-document.querySelector(".sort-button").addEventListener("click", function () {
-    const selectedSortValue = document.querySelector('input[name="sortbutton"]:checked').value;
-
+document.querySelector(".sort-select").addEventListener("change", function () {
+    const selectedSortValue = document.getElementById("sort-select").value;
+  
     switch (selectedSortValue) {
-        case "lowprice":
-            products.sort(function (a, b) {
-                return a.prices.price - b.prices.price;
-            });
-            break;
-        case "highprice":
-            products.sort(function (a, b) {
-                return b.prices.price - a.prices.price;
-            });
-            break;
-        case "nameasc":
-            products.sort(function (a, b) {
-                return a.name.localeCompare(b.name);
-            });
-            break;
-        case "namedesc":
-            products.sort(function (a, b) {
-                return b.name.localeCompare(a.name);
-            });
-            break;
-        default:
-            break;
+      case "lowprice":
+        products.sort(function (a, b) {
+          return a.prices.price - b.prices.price;
+        });
+        break;
+      case "highprice":
+        products.sort(function (a, b) {
+          return b.prices.price - a.prices.price;
+        });
+        break;
+      case "nameasc":
+        products.sort(function (a, b) {
+          return a.name.localeCompare(b.name);
+        });
+        break;
+      case "namedesc":
+        products.sort(function (a, b) {
+          return b.name.localeCompare(a.name);
+        });
+        break;
+      default:
+        break;
     }
-        createHtml(products);
-    })
+    createHtml(products);
+  });
+  
     
     }
     catch (error) {
