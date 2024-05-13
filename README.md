@@ -4,14 +4,14 @@ This is the cross-course project we are using through the frontend-development s
 
 # Features
 
-• Uses headless CMS to load new content directly from a wordpress API
-• Responsive and dynamic design with Javascript
+- Uses headless CMS to load new content directly from a wordpress API
+- Responsive and dynamic design with Javascript
 
 # Technologies Used
 
-• HTML5
-• CSS3
-• JavaScript
+- HTML5
+- CSS3
+- JavaScript
 
 # Website
 
